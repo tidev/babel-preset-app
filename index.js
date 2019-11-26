@@ -1,0 +1,89 @@
+module.exports = (context, options = {}) => {
+  const {
+    // @babel/preset-env options
+    env = {},
+    // babel-plugin-transform-titanium
+    titanium = {},
+    // our custom options
+    polyfills: userPolyfills
+  } = options;
+
+  const {
+    targets,
+    spec,
+    loose,
+    modules,
+    debug,
+    include,
+    exclude,
+    useBuiltIns = 'usage',
+    corejs = 3,
+    forceAllTransforms,
+    configPath,
+    ignoreBrowserslistConfig,
+    shippedProposals,
+  } = env
+
+  const {
+    deployType,
+    platform,
+    target,
+    Ti
+  } = titanium;
+
+  // Compute a list of default polyfills to include. Babel ignores node_modules
+  // by default, so when useBuiltIns: 'usage' is set we don't have have a chance
+  // to track usage in third-party dependencies. We provide a list with defaults
+  // but users can set their own using the `polyfills` option.
+  // TODO: Implement this when we actually support useBuiltIns: 'usage'
+  let polyfills;
+  if (useBuiltIns === 'usage') {
+
+  } else {
+    polyfills = [];
+  }
+
+  const presets = [];
+  const presetEnvOptions = {
+    targets,
+    spec,
+    loose,
+    modules,
+    debug,
+    include,
+    exclude,
+    useBuiltIns,
+    corejs,
+    forceAllTransforms,
+    configPath,
+    ignoreBrowserslistConfig,
+    shippedProposals
+  };
+  presets.push([require('@babel/preset-env'), presetEnvOptions]);
+
+  const plugins = [];
+  plugins.push(
+    [require('@babel/plugin-transform-runtime'), {
+      corejs: false,
+      helpers: useBuiltIns === 'usage',
+      regenerator: useBuiltIns !== 'usage'
+    }],
+    [require('babel-plugin-transform-titanium'), {
+      deploytype: deployType,
+      platform,
+      target,
+      Ti
+    }]
+  )
+
+  return {
+    sourceType: 'unambiguous',
+    overrides: [
+      {
+        exclude: [/@babel[\/|\\\\]runtime/, /core-js/],
+        presets,
+        plugins
+      }
+    ]
+  };
+}

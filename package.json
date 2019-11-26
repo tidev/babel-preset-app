@@ -1,0 +1,29 @@
+{
+  "name": "@titanium-sdk/babel-preset-app",
+  "version": "1.0.0",
+  "description": "Default Babel preset for all Titanium project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "titanium",
+    "babel",
+    "preset"
+  ],
+  "author": "Axway Appcelerator",
+  "license": "Apache2.0",
+  "homepage": "https://github.com/appcelerator/babel-preset-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appcelerator/babel-preset-app.git"
+  },
+  "dependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/runtime": "^7.7.2",
+    "babel-plugin-transform-titanium": "^0.1.1",
+    "core-js": "^3.4.1"
+  }
+}
