@@ -1,6 +1,6 @@
 # @titanium-sdk/babel-preset-app
 
-This is the default Babel preset used in all Titanium app projects that have Webpack enabled.
+This is the default Babel preset used in Titanium app projects that have Webpack enabled.
 
 > ℹ️ Note: The Titanium CLI will automatically configure this preset based on your current build command. If you want to also include this preset in your third-party libraries you need to configure it yourself.
 
@@ -34,7 +34,7 @@ This preset will be automatically configured when used in Titanium app projects.
 
 - `env`
   - `useBuiltIns: false`: Disabled for now because the Titanium core runtime already bundles all neccessary polyfills. See [TIMOB-27629](https://jira.appcelerator.org/browse/TIMOB-27629) for a planned improvment of this option.
-  - `targets`: Will be set depdending on the platform you build for. On Android this is V8 version Titanium was build for. On iOS this is either the configured `<min-ios-ver>` of your project, or the default minimum supported iOS version of the SDK you are building with.
+  - `targets`: Will be set depdending on the platform you build for. On Android this is the V8 version Titanium was build for. On iOS this is either the configured `<min-ios-ver>` of your project, or the default minimum supported iOS version of the SDK you are building with.
 
 - `titanium`
   - `deploytype`: The deployment type of the issued build command.
