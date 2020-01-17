@@ -16,8 +16,10 @@ module.exports = (context, options = {}) => {
     debug,
     include,
     exclude,
-    useBuiltIns = 'usage',
-    corejs = 3,
+    // TODO: default to `usage` once TIMOB-27629 is resolved
+    useBuiltIns = false,
+    // TODO: default to `3` once TIMOB-27629 is resolved
+    corejs = undefined,
     forceAllTransforms,
     configPath,
     ignoreBrowserslistConfig,
