@@ -33,8 +33,8 @@ All options from [babel-plugin-transform-titanium](https://github.com/appcelerat
 This preset will be automatically configured when used in Titanium app projects. The default options are:
 
 - `env`
-  - `useBuiltIns: false`: Disabled for now because the Titanium core runtime already bundles all neccessary polyfills. See [TIMOB-27629](https://jira.appcelerator.org/browse/TIMOB-27629) for a planned improvment of this option.
-  - `targets`: Will be set depdending on the platform you build for. On Android this is the V8 version Titanium was build for. On iOS this is either the configured `<min-ios-ver>` of your project, or the default minimum supported iOS version of the SDK you are building with.
+  - `useBuiltIns: false`: Disabled for now because the Titanium core runtime already bundles all neccessary polyfills. See [TIMOB-27629](https://jira.appcelerator.org/browse/TIMOB-27629) for a planned improvement of this option.
+  - `targets`: Will be set depending on the platform you build for. On Android this is the V8 version Titanium was build for. On iOS this is either the configured `<min-ios-ver>` of your project, or the default minimum supported iOS version of the SDK you are building with.
 
 - `titanium`
   - `deploytype`: The deployment type of the issued build command.
