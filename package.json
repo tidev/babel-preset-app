@@ -4,7 +4,9 @@
   "description": "Default Babel preset for Titanium app projects",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "lint": "eslint index.js test",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "jest"
   },
   "keywords": [
     "titanium",
@@ -27,6 +29,9 @@
     "core-js": "^3.6.4"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-axway": "^4.5.0",
+    "eslint-plugin-jest": "^23.6.0",
     "jest": "^25.1.0"
   }
 }
