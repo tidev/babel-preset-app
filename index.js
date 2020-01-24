@@ -27,7 +27,7 @@ module.exports = (context, options = {}) => {
   } = env
 
   const {
-    deployType,
+    deploytype,
     platform,
     target,
     Ti
@@ -71,7 +71,7 @@ module.exports = (context, options = {}) => {
       regenerator: useBuiltIns !== 'usage'
     }],
     [require('babel-plugin-transform-titanium'), {
-      deploytype: deployType,
+      deploytype,
       platform,
       target,
       Ti
