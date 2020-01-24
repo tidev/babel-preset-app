@@ -4,7 +4,7 @@
   "description": "Default Babel preset for Titanium app projects",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "titanium",
@@ -12,7 +12,7 @@
     "preset"
   ],
   "author": "Axway Appcelerator",
-  "license": "Apache2.0",
+  "license": "Apache-2.0",
   "homepage": "https://github.com/appcelerator/babel-preset-app",
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
     "@babel/runtime": "^7.8.3",
     "babel-plugin-transform-titanium": "^0.1.1",
     "core-js": "^3.6.4"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
   }
 }
