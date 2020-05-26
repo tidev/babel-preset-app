@@ -86,7 +86,10 @@ module.exports = (context, options = {}) => {
 		sourceType: 'unambiguous',
 		overrides: [
 			{
-				exclude: [ /@babel[/|\\\\]runtime/, /core-js/ ],
+				exclude: [
+					// JS files under the Titanium common folder are already transpiled
+					/common[/\\]Resources[/\\](android|ios)[/\\].*\.js/
+				],
 				presets,
 				plugins
 			}
