@@ -61,19 +61,19 @@ module.exports = (context, options = {}) => {
 		ignoreBrowserslistConfig,
 		shippedProposals
 	};
-	presets.push([ require('@babel/preset-env'), presetEnvOptions ]);
+	presets.push([ '@babel/preset-env', presetEnvOptions ]);
 
 	const plugins = [];
 	plugins.push(
 		[
-			require('@babel/plugin-transform-runtime'), {
+			'@babel/plugin-transform-runtime', {
 				corejs: false,
 				helpers: useBuiltIns === 'usage',
 				regenerator: useBuiltIns !== 'usage'
 			}
 		],
 		[
-			require('babel-plugin-transform-titanium'), {
+			'babel-plugin-transform-titanium', {
 				deploytype,
 				platform,
 				target,
