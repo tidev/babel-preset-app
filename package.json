@@ -1,6 +1,6 @@
 {
   "name": "@titanium-sdk/babel-preset-app",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Default Babel preset for Titanium app projects",
   "main": "index.js",
   "scripts": {
