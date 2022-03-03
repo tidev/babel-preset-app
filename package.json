@@ -45,7 +45,7 @@
     "jest": "^27.0.3",
     "jest-junit": "^13.0.0",
     "lint-staged": "^11.0.0",
-    "pinst": "^2.1.6"
+    "pinst": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"
